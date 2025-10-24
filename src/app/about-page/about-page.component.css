@@ -1,0 +1,48 @@
+.about-me-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#Avatar {
+    padding-top: 10vh;
+    width: 330px;
+}
+
+.introduction {
+    width: 40%;
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: end;
+}
+
+#intro{
+    font-size: 135px;
+}
+
+.position {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    gap: 15px;             
+    width: 70%;
+}
+
+.position p {
+    font-style: italic;
+    font-weight: 500;
+}
+
+.position::after {
+    content: "";
+    flex: 1;
+    height: 5px;     
+    background-color: #000; 
+    opacity: 0.8;
+}
+
+
+.about-me {
+    width: 40%;
+}
