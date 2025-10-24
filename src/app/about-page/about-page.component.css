@@ -2,10 +2,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    overflow: hidden;
 }
 
 #Avatar {
     padding-top: 10vh;
+    transform: scaleX(-1);
     width: 330px;
 }
 
@@ -13,12 +15,30 @@
     width: 40%;
     display: flex;
     flex-direction: column;  
-    justify-content: center;
+    padding-top: 55px;
     align-items: end;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.introduction.scrolled {
+    transform: translateX(-200px);
+    opacity: 0;
 }
 
 #intro{
-    font-size: 135px;
+    font-size: 125px;
+}
+
+.flip-letter {
+  display: inline-block;
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+  cursor: default;
+}
+
+.flip-letter:hover {
+  transform: rotateY(180deg);
+  color: #66FCF1;   
 }
 
 .position {
@@ -42,7 +62,61 @@
     opacity: 0.8;
 }
 
-
 .about-me {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 40%;
+    padding-top: 70px;
+    padding-right: 20px;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.about-me.scrolled {
+    transform: translateX(200px);
+    opacity: 0;
+}
+
+#title {
+    font-size: 65px;
+    font-weight: 500;
+}
+
+.button-section {
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+#download-button{
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2a2a2a;
+    color: #FFFFFF;
+    padding: 13px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#download-button:hover{
+    transform: scale(1.1);
+}
+
+#contact-button{
+    border: none;
+    background-color: #2a2a2a;
+    color: #FFFFFF;
+    padding: 13px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#contact-button:hover{
+    transform: scale(1.1);
 }

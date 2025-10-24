@@ -2,19 +2,29 @@
     <app-header-layout></app-header-layout>
 </section>
 <section class="about-me-page">
-    <div class="introduction">
-        <p id="intro">hello</p>
-        <p id="intro">i'm</p>
-        <p id="intro">kristian</p>
+    <div class="introduction" [class.scrolled]="isScrolled">
+        <p id="intro">
+            <span *ngFor="let letter of getLetters(firstParagraph)" class="flip-letter">{{ letter }}</span>
+        </p>
+        <p id="intro">
+            <span *ngFor="let letter of getLetters(secondParagraph)" class="flip-letter">{{ letter }}</span>
+        </p>
+        <p id="intro">
+            <span *ngFor="let letter of getLetters(thirdParagraph)" class="flip-letter">{{ letter }}</span>
+        </p>
         <div class="position">
             <p>Web & Automation Developer</p>
         </div>
     </div>
     <figure>
-        <img src="assets/about-page/Avatar.png" alt="Avatar" id="Avatar">
+        <img src="assets/about-page/Avatar1.png" alt="Avatar" id="Avatar">
     </figure>
-    <div class="about-me">
-        <p>ABOUT ME</p>
-        <p>Description about me...</p>
+    <div class="about-me" [class.scrolled]="isScrolled">
+        <p id="title">ABOUT ME</p>
+        <p>I am a self-taught programmer with hands-on experience in web and automation development. At 24 years old, I currently reside in Batangas and hold a bachelor's degree in Computer Engineering. I'm passionate about building efficient, user-friendly solutions and continuously expanding my skills in technology and software development.</p>
+        <div class="button-section">
+            <button id="download-button">DOWNLOAD CV</button>
+            <button id="contact-button">CONTACT ME</button>
+        </div>
     </div>
 </section>
