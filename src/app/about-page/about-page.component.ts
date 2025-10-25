@@ -16,6 +16,7 @@ export class AboutPageComponent {
   secondParagraph: string = "i'm";
   thirdParagraph: string = 'kristian';
   isScrolled = false;
+  isTyping = true;
 
   getLetters(text: string): string[] {
     return text.split('');
@@ -25,6 +26,18 @@ export class AboutPageComponent {
   onWindowScroll() {
     const scrollY = window.scrollY || window.pageYOffset;
     this.isScrolled = scrollY > 100;
+  }
+
+  restartAnimation() {
+    console.log("End of sixth animation")
+    setTimeout(() => {
+      this.isTyping = false;
+
+      setTimeout(() => {
+        console.log("Restart Animation")
+        this.isTyping = true;
+      }, 10);
+    }, 40000);
   }
 
 }
