@@ -107,6 +107,11 @@
     cursor: default;
 }
 
+.isHidden {
+  visibility: hidden;
+}
+
+
 .typewriter-animation {
     position: relative;
     width: auto;       
@@ -118,7 +123,7 @@
     cursor: default;
 }
 
-.first {
+.first {    
     animation: 
         typewriter 5s steps(50) 1s 1 normal both,
         blinkingCursor 500ms steps(50) 1s 8 normal both,

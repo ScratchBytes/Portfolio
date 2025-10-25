@@ -28,16 +28,19 @@ export class AboutPageComponent {
     this.isScrolled = scrollY > 100;
   }
 
-  restartAnimation() {
-    console.log("End of sixth animation")
-    setTimeout(() => {
-      this.isTyping = false;
+  onAnimationEnd(event: AnimationEvent) {
 
+    if (event.animationName.includes('deleting')) {
+      console.log("End")
       setTimeout(() => {
-        console.log("Restart Animation")
-        this.isTyping = true;
-      }, 10);
-    }, 40000);
+        this.isTyping = false;
+        setTimeout(() => {
+          console.log("Reset")
+          this.isTyping = true;
+        }, 10);
+      }, 6000);
+    }
+
   }
 
 }

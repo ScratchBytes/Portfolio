@@ -21,7 +21,7 @@
     </figure>
     <div class="about-me" [class.scrolled]="isScrolled">
         <p id="title">ABOUT ME</p>
-        <div class="typewritter-content">
+        <div class="typewritter-content" [class.isHidden]="!isTyping">
             <p class="typewriter-animation" [class.first] = "isTyping">I am a self-taught programmer with hands-on experience in web</p>
             <p class="typewriter-animation" [class.second] = "isTyping">and automation development. At 24 years old, I currently reside in</p>
             <p class="typewriter-animation" [class.third] = "isTyping">Batangas and hold a bachelor's degree in Computer Engineering.</p>
@@ -30,7 +30,7 @@
             <div class="isblinking">
                 <p class="typewriter-animation"
                    [class.sixth] = "isTyping"
-                   (animationend)="restartAnimation()">development.</p>
+                   (animationend)="onAnimationEnd($event)">development.</p>
             </div>
         </div>
         <div class="button-section">
