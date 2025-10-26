@@ -34,7 +34,25 @@
             </div>
         </div>
         <div class="button-section">
-            <button id="download-button">DOWNLOAD CV</button>
+            <div class="button-container">
+                <button 
+                    *ngIf="!loading" 
+                    class="load-btn"
+                    (click)="startLoading()">DOWNLOAD CV
+                </button>
+                <div *ngIf="loading" class="progress-wrapper">
+                    <div class="progress-container"
+                        [class.circle]="isCircle"
+                        [class.complete]="isComplete"
+                        [class.returning]="isReturning">
+                    <div *ngIf="!isCircle" 
+                        class="progress-bar" 
+                        [style.width.%]="progress">
+                    </div>
+                    <div *ngIf="isCircle && isComplete" class="checkmark"><span class="material-symbols-outlined isCheck">check</span></div>
+                    </div>
+                </div>
+                </div>
             <button id="contact-button">CONTACT ME</button>
         </div>
     </div>

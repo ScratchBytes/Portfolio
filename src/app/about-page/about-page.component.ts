@@ -17,6 +17,11 @@ export class AboutPageComponent {
   thirdParagraph: string = 'kristian';
   isScrolled = false;
   isTyping = true;
+  loading = false;
+  progress = 0;
+  isCircle = false;
+  isComplete = false;
+  isReturning = false;
 
   getLetters(text: string): string[] {
     return text.split('');
@@ -41,6 +46,46 @@ export class AboutPageComponent {
       }, 6000);
     }
 
+  }
+
+  startLoading() {
+    this.loading = true;
+    this.progress = 0;
+    this.isCircle = false;
+    this.isComplete = false;
+    this.isReturning = false;
+
+    const interval = setInterval(() => {
+      this.progress += 15;
+
+      if (this.progress >= 100) {
+        clearInterval(interval);
+        this.progress = 100;
+
+        // Step 1: morph into circle
+        setTimeout(() => {
+          this.isCircle = true;
+
+          // Step 2: show checkmark
+          setTimeout(() => {
+            this.isComplete = true;
+
+            // Step 3: morph back to square
+            setTimeout(() => {
+              this.isReturning = true;
+              this.isCircle = false;
+              this.isComplete = false;
+
+              // Step 4: show button again
+              setTimeout(() => {
+                this.loading = false;
+                this.isReturning = false;
+              }, 700);
+            }, 1300);
+          }, 600);
+        }, 400);
+      }
+    }, 100);
   }
 
 }
