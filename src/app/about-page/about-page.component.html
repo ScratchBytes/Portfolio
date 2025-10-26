@@ -1,8 +1,13 @@
 <section>
     <app-header-layout></app-header-layout>
 </section>
+<section class="vector1-bg">
+    <figure>
+        <img src="assets/vectors/Vector1.png" alt="Vector-Terrain1" id="vector-terrain-one">
+    </figure>
+</section>
 <section class="about-me-page">
-    <div class="introduction" [class.scrolled]="isScrolled">
+    <div class="introduction" [class.scrolled]="isScrolled1">
         <p id="intro">
             <span *ngFor="let letter of getLetters(firstParagraph)" class="flip-letter">{{ letter }}</span>
         </p>
@@ -16,10 +21,10 @@
             <p>Web & Automation Developer</p>
         </div>
     </div>
-    <figure>
-        <img src="assets/about-page/Avatar1.png" alt="Avatar" id="Avatar">
+    <figure [class.scrolled]="isScrolled1">
+        <img [src]="currentAvatar" [id]="currentAvatarId" id="Avatar">
     </figure>
-    <div class="about-me" [class.scrolled]="isScrolled">
+    <div class="about-me" [class.scrolled]="isScrolled1">
         <p id="title">ABOUT ME</p>
         <div class="typewritter-content" [class.isHidden]="!isTyping">
             <p class="typewriter-animation" [class.first] = "isTyping">I am a self-taught programmer with hands-on experience in web</p>
@@ -57,3 +62,8 @@
         </div>
     </div>
 </section>
+<!-- <section class="vector1-bg">
+    <figure>
+        <img src="assets/vectors/Vector1.png" alt="Vector-Terrain1" id="vector-terrain-one">
+    </figure>
+</section> -->

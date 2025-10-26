@@ -1,3 +1,12 @@
+@keyframes afloat {
+  0%, 100% {
+    transform: scaleX(-1) translateY(0);
+  }
+  50% {
+    transform: scaleX(-1) translateY(-2px);
+  }
+}
+
 @keyframes typewriter {
     from { 
         width: 0; 
@@ -43,15 +52,39 @@
 
 .about-me-page {
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: space-around;
     overflow: hidden;
+    z-index: 1;
 }
 
-#Avatar {
+#Avatar1 {
     padding-top: 10vh;
+    width: 21.5vw;
     transform: scaleX(-1);
-    width: 330px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+#Avatar2 {
+    padding-top: 10vh;
+    width: 21.5vw;
+    transform: scaleX(-1);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+#Avatar3 {
+    padding-top: 22.7vh;
+    width: 18vw;
+    padding-left: 53px;
+    transform: scaleX(-1);   
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+#Avatar4 {
+    padding-top: 19.2vh;
+    width: 21.5vw;
+    transform: scaleX(-1);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .introduction {
@@ -70,7 +103,8 @@
 }
 
 #intro{
-    font-size: 125px;
+    /* font-size: 125px; */
+    font-size: 8vw;
     text-shadow: 1px 1px 2px #000000;
 }
 
@@ -299,4 +333,16 @@
 #contact-button:hover {
     color: #66FCF1; 
     font-weight: 700;
+}
+
+.vector1-bg {
+    width: 100%;
+    position: absolute;
+    top: 606px;
+}
+
+#vector-terrain-one{
+    width: 99vw;
+    z-index: -1;
+    filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.5));
 }

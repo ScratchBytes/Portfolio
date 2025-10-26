@@ -15,7 +15,9 @@ export class AboutPageComponent {
   firstParagraph: string = 'hello';
   secondParagraph: string = "i'm";
   thirdParagraph: string = 'kristian';
-  isScrolled = false;
+  currentAvatar: string = 'assets/about-page/Avatar1.png';
+  currentAvatarId = 'Avatar1';
+  isScrolled1 = false;
   isTyping = true;
   loading = false;
   progress = 0;
@@ -30,7 +32,21 @@ export class AboutPageComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollY = window.scrollY || window.pageYOffset;
-    this.isScrolled = scrollY > 100;
+    this.isScrolled1 = scrollY > 200;
+
+    if (scrollY > 300) {
+      this.currentAvatar = 'assets/about-page/Avatar4.png';
+      this.currentAvatarId = 'Avatar4';
+    } else if (scrollY > 200) {
+      this.currentAvatar = 'assets/about-page/Avatar3.png';
+      this.currentAvatarId = 'Avatar3';
+    } else if (scrollY > 50) {
+      this.currentAvatar = 'assets/about-page/Avatar2.png';
+      this.currentAvatarId = 'Avatar2';
+    } else {
+      this.currentAvatar = 'assets/about-page/Avatar1.png';
+      this.currentAvatarId = 'Avatar1';
+    }
   }
 
   onAnimationEnd(event: AnimationEvent) {
