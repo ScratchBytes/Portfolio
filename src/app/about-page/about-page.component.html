@@ -1,5 +1,5 @@
 <section>
-    <app-header-layout (scrollTo)="onScrollTo($event)"></app-header-layout>
+    <app-header-layout (scrollTo)="scrollToSection($event)"></app-header-layout>
 </section>
 <section class="vector1-bg">
     <figure>
@@ -22,7 +22,7 @@
         </div>
     </div>
     <figure [class.scrolled]="isScrolled1">
-        <img [src]="currentAvatar" [id]="currentAvatarId" id="Avatar">
+        <img [src]="currentAvatar" [id]="currentAvatarId">
     </figure>
     <div class="about-me" [class.scrolled]="isScrolled1">
         <p id="title">ABOUT ME</p>
@@ -62,8 +62,3 @@
         </div>
     </div>
 </section>
-<!-- <section class="vector1-bg">
-    <figure>
-        <img src="assets/vectors/Vector1.png" alt="Vector-Terrain1" id="vector-terrain-one">
-    </figure>
-</section> -->

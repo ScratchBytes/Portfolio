@@ -11,7 +11,7 @@ export class HeaderLayoutComponent {
 
   @Output() scrollTo = new EventEmitter<string>();
 
-  isScroll(section: string) {
+  scrollToSection(section: string) {
     this.scrollTo.emit(section);
   }
   

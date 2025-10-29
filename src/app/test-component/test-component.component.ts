@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component,  ElementRef, ViewChild} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-test-component',
@@ -9,19 +9,5 @@ import { Component,  ElementRef, ViewChild} from '@angular/core';
   styleUrls: ['./test-component.component.css']
 })
 export class TestComponentComponent {
-
-  @ViewChild('aboutSection') aboutSection!: ElementRef;
-  @ViewChild('servicesSection') servicesSection!: ElementRef;
-  @ViewChild('contactSection') contactSection!: ElementRef;
-
-  scrollToSection(section: string) {
-    const sectionRefs: { [key: string]: ElementRef } = {
-      about: this.aboutSection,
-      services: this.servicesSection,
-      contact: this.contactSection,
-    };
-
-    sectionRefs[section]?.nativeElement.scrollIntoView({ behavior: 'smooth' });
-  }
 
 }

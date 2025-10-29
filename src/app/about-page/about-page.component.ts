@@ -27,8 +27,8 @@ export class AboutPageComponent {
 
   @Output() scrollTo = new EventEmitter<string>();
 
-  onScrollTo(section: string) {
-    this.scrollTo.emit(section); // re-emit event to main-page
+  scrollToSection(section: string) {
+    this.scrollTo.emit(section);
   }
 
   getLetters(text: string): string[] {
