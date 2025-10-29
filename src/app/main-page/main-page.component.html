@@ -1,9 +1,11 @@
-<section id="about-page-section">
-    <app-about-page></app-about-page>
+<section #aboutSection id="about">
+    <app-about-page (scrollTo)="scrollToSection($event)"></app-about-page>
 </section>
-<section id="skill-page-section">
+
+<section #skillSection id="skills">
     <app-skill-page></app-skill-page>
 </section>
-<section id="experience-page-section">
+
+<section #experienceSection id="experience">
     <app-experience-page></app-experience-page>
 </section>

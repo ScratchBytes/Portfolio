@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output  } from '@angular/core';
 
 @Component({
   selector: 'app-header-layout',
@@ -9,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderLayoutComponent {
 
+  @Output() scrollTo = new EventEmitter<string>();
+
+  isScroll(section: string) {
+    this.scrollTo.emit(section);
+  }
+  
 }

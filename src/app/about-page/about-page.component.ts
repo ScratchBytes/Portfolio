@@ -1,4 +1,4 @@
-import { Component, HostListener  } from '@angular/core';
+import { Component, HostListener, EventEmitter, Output } from '@angular/core';
 import { HeaderLayoutComponent } from '../header-layout/header-layout.component';
 import { CommonModule } from '@angular/common';
 
@@ -24,6 +24,12 @@ export class AboutPageComponent {
   isCircle = false;
   isComplete = false;
   isReturning = false;
+
+  @Output() scrollTo = new EventEmitter<string>();
+
+  onScrollTo(section: string) {
+    this.scrollTo.emit(section); // re-emit event to main-page
+  }
 
   getLetters(text: string): string[] {
     return text.split('');

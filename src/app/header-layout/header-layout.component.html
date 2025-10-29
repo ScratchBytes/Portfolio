@@ -1,8 +1,8 @@
 <section>
-    <img src="assets/about-page/Logo.png" alt="Logo" id="Logo">
+    <img src="assets/about-page/Logo.png" alt="Logo" id="Logo" (click)="isScroll('about')">
     <div class="pages">
-        <h4>SKILLS</h4>
-        <h4>EXPERIENCE</h4>
-        <h4>EDUCATION</h4>
+        <h4 (click)="isScroll('skills')">SKILLS</h4>
+        <h4 (click)="isScroll('experience')">EXPERIENCE</h4>
+        <h4 (click)="isScroll('education')">EDUCATION</h4>
     </div>
 </section>
