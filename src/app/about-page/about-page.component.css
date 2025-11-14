@@ -77,14 +77,14 @@
     width: 18vw;
     padding-left: 53px;
     transform: scaleX(-1);   
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 2px #FFFFFF);
 }
 
 #Avatar4 {
     padding-top: 19.2vh;
     width: 21.5vw;
     transform: scaleX(-1);
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(2px #FFFFFF);
 }
 
 .introduction {
@@ -344,4 +344,27 @@
     width: 99vw;
     z-index: -1;
     filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.5));
+}
+
+.portfolio-title {
+  position: absolute;
+  top: 50%;           
+  left: 50%;                
+  transform: translate(-50%, -50%) scale(0.3);
+  font-size: 20px;
+  opacity: 0;
+  color: #2a2a2a;
+  z-index: 0;            
+  pointer-events: none;
+  transition: all 0.8s ease-out;
+  font-family: "Luckiest Guy", cursive;
+  text-shadow: 1px 1px 2px black;
+}
+
+.portfolio-title.show {
+    opacity: 1;
+    font-size: 80px;
+    transform: translate(-50%, -50%) scale(2.8,3.3);
+    padding-top: 80px;
+    font-weight: 900;
 }

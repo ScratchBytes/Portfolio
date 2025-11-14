@@ -7,7 +7,7 @@
     </figure>
 </section>
 <section class="about-me-page">
-    <div class="introduction" [class.scrolled]="isScrolled1">
+    <div class="introduction" [class.scrolled]="isScrolled">
         <p id="intro">
             <span *ngFor="let letter of getLetters(firstParagraph)" class="flip-letter">{{ letter }}</span>
         </p>
@@ -21,10 +21,10 @@
             <p>Web & Automation Developer</p>
         </div>
     </div>
-    <figure [class.scrolled]="isScrolled1">
+    <figure [class.scrolled]="isScrolled">
         <img [src]="currentAvatar" [id]="currentAvatarId">
     </figure>
-    <div class="about-me" [class.scrolled]="isScrolled1">
+    <div class="about-me" [class.scrolled]="isScrolled">
         <p id="title">ABOUT ME</p>
         <div class="typewritter-content" [class.isHidden]="!isTyping">
             <p class="typewriter-animation" [class.first] = "isTyping">I am a self-taught programmer with hands-on experience in web</p>
@@ -62,3 +62,9 @@
         </div>
     </div>
 </section>
+
+<div class="portfolio-container">
+    <h1 [ngClass]="{'show': showPortfolio}" class="portfolio-title">
+        MY PORTFOLIO
+    </h1>
+</div>

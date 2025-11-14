@@ -17,13 +17,16 @@ export class AboutPageComponent {
   thirdParagraph: string = 'kristian';
   currentAvatar: string = 'assets/about-page/Avatar1.png';
   currentAvatarId = 'Avatar1';
-  isScrolled1 = false;
+  isScrolled = false;
   isTyping = true;
   loading = false;
   progress = 0;
   isCircle = false;
   isComplete = false;
   isReturning = false;
+
+  
+  showPortfolio = false;
 
   @Output() scrollTo = new EventEmitter<string>();
 
@@ -38,7 +41,12 @@ export class AboutPageComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollY = window.scrollY || window.pageYOffset;
-    this.isScrolled1 = scrollY > 200;
+    this.isScrolled = scrollY > 200;
+
+    const scrollPosition = window.scrollY;
+
+    // Show when scroll passes 200px, hide when scroll above 200px
+    this.showPortfolio = scrollPosition > 200;
 
     if (scrollY > 300) {
       this.currentAvatar = 'assets/about-page/Avatar4.png';
